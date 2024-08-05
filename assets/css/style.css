@@ -11236,7 +11236,7 @@ textarea.form-control-lg {
 
   .navbar-brand img {
     height: 100%; /* Adjust height relative to the navbar height */
-    max-height: 400px; /* Ensure it doesn’t overflow the navbar */
+    max-height: 500px; /* Ensure it doesn’t overflow the navbar */
     width: 150px; /* Keep the aspect ratio */
   }
 }
