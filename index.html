@@ -12,6 +12,32 @@
     <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
+
+<script>
+  document.addEventListener('click', function (event) {
+    var navbarToggler = document.querySelector('.navbar-toggler');
+    var navbarCollapse = document.querySelector('.navbar-collapse');
+    var isClickInsideNavbar = navbarCollapse.contains(event.target) || navbarToggler.contains(event.target);
+
+    // Collapse the navbar if it's open and the click is outside of it
+    if (!isClickInsideNavbar && navbarToggler.getAttribute('aria-expanded') === 'true') {
+      navbarToggler.click();
+    }
+  });
+
+  // Add event listener to navbar links to collapse the navbar when clicked
+  var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+  navLinks.forEach(function (link) {
+    link.addEventListener('click', function () {
+      var navbarToggler = document.querySelector('.navbar-toggler');
+      if (navbarToggler.getAttribute('aria-expanded') === 'true') {
+        navbarToggler.click();
+      }
+    });
+  });
+</script>
+
+
 <body>
 
 <!-- ////////////////////////////////////////////////////////////////////////////////////////
@@ -19,10 +45,9 @@
 /////////////////////////////////////////////////////////////////////////////////////////////-->
 <nav class="navbar navbar-expand-lg navbar-dark menu shadow fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="">
-      <img src="images/ignite-removed-1.png" alt="logo image" id="navbar-logo">
+    <a class="navbar-brand" href="index.html">
+      <img src="images/ignite-removed-1.png" alt="Ignite logo" id="navbar-logo">
     </a>
-    
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -36,10 +61,10 @@
         <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
-      
     </div>
   </div>
 </nav>
+
 
 
 <!-- /////////////////////////////////////////////////////////////////////////////////////////////////
